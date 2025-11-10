@@ -1,0 +1,193 @@
+.hero-section {
+  position: relative;
+  /* optimize performance with will-change and separate background declarations */
+  background-color: rgb(255, 140, 0);
+  background-image: 
+    linear-gradient(rgb(255, 140, 0), rgba(255, 140, 0, 0.45)),
+    url('./src/assets/indian-food-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* parallax effect */
+  min-height: calc(100vh - 65px);
+  margin-block-start: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(1rem, 5vw, 3rem) 0;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  inset-inline: 50%;
+  margin-inline: -50vw;
+  will-change: transform; /* optimize composite layers */
+  contain: layout paint; /* optimize rendering */
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px; /* slightly overlap to hide seams */
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  max-width: min(90%, 1200px);
+  color: white;
+  position: relative;
+  z-index: 1;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+  margin-inline: auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.2;
+  font-weight: 800;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.02em;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.6;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-weight: 400;
+  max-width: 45ch;
+  margin-inline: auto;
+  opacity: 0.95;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  padding-inline: 1rem;
+}
+
+.hero-buttons button {
+  --btn-padding: clamp(0.8rem, 2vw, 1rem);
+  padding: var(--btn-padding) calc(var(--btn-padding) * 2);
+  border: none;
+  border-radius: 15px;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-weight: 700;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+  white-space: nowrap;
+  min-width: min-content;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .hero-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 15%);
+  }
+}
+
+.find-button {
+  background-color: #00c853;
+  color: white;
+  padding-right: calc(var(--btn-padding) * 2.5);
+}
+
+.find-button span {
+  font-size: 1.2rem;
+  display: inline-flex;
+}
+
+.list-button {
+  background-color: rgb(255 255 255 / 23%);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.list-button:hover {
+  background-color: rgb(255 255 255 / 30%);
+}
+
+.list-button span {
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-flex;
+}
+
+/* Wave optimizations */
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: clamp(60px, 10vw, 120px);
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0); /* force GPU acceleration */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: min(100%, 400px);
+    margin-inline: auto;
+  }
+  
+  .hero-content br {
+    display: none; /* remove line break in title on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    margin-block-start: 45px;
+    min-height: calc(100vh - 45px);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-buttons button {
+    transition: none;
+  }
+  
+  .hero-buttons button:hover {
+    transform: none;
+  }
+  
+  .hero-section {
+    background-attachment: scroll;
+  }
+}
