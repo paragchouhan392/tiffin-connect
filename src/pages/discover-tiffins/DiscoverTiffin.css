@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* { font-family: "Roboto", sans-serif; }
+
+.discover-page {
+  margin-top: 30px;
+  padding: 20px 40px;
+}
+
+/******** LOCATION BAR ********/
+.location-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.change-btn {
+  background: #ff8c00;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.change-btn:hover { opacity: 0.8; }
+
+/******** FILTERS ********/
+.filters-container {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.clear-filter {
+  background: transparent;
+  border: 1px solid #ff8c00;
+  color: #ff8c00;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.clear-filter:hover {
+  background: #ff8c00;
+  color: #fff;
+}
+
+/******** TIFFIN GRID ********/
+.tiffin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tiffin-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  transition: transform .25s ease;
+}
+
+.tiffin-card:hover {
+  transform: translateY(-5px);
+}
+
+.tiffin-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.tiffin-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.tiffin-desc {
+  font-size: 15px;
+  margin: 5px 0 10px;
+  color: #444;
+}
+
+.view-btn {
+  background: #ff8c00;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.view-btn:hover { opacity: 0.85; }

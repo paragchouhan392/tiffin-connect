@@ -1,0 +1,102 @@
+/* Importing roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Container */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 5px;
+  left: 7px;
+  right: 7px;
+  padding: 0 20px;
+  background-color: rgb(239, 230, 217);
+  height: 60px;
+  border-radius: 10px;
+  z-index: 100;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Left */
+.header-left {
+  flex: 1;
+}
+
+.app-logo {
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.app-logo:hover {
+  transform: scale(1.07);
+}
+
+/* Center */
+.header-centre {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-list li a:hover {
+  color: #ff6a00;       /* hover orange */
+  transform: translateY(-2px);
+}
+
+/* Right */
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.sign-in-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sign-in-btn:hover {
+  color: #ff6a00;
+  transform: translateY(-2px);
+}
+
+/* Get Started Button */
+.get-started-btn {
+  background-color: #ff8c00;  /* saffron tone */
+  color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
