@@ -1,10 +1,17 @@
 import "./Header.css";
+import { scrollToTopOnReload } from '../utils/scrollUtils.js';
+
+ 
 
 export function Header() {
+  const handleLogoClick = () => {
+    scrollToTopOnReload();
+    window.location.reload();
+  };
   return (
     <header className="header-container">
       <div className="header-left">
-        <img src="/images/logo.png" alt="App Logo" className="app-logo" />
+        <img src="/images/logo.png" alt="App Logo" onClick={handleLogoClick} className="app-logo" />
       </div>
 
       <nav className="header-centre">

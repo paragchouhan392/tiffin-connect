@@ -8,7 +8,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-background-image: url('/hero-tiffin-boxes.jpg');
+background-image: url('/images/hero-tiffin-boxes.jpg');
   background-size: cover;
   background-position: center;
   filter: saturate(0.85) contrast(1.02) brightness(0.9);
@@ -53,12 +53,12 @@ background-image: url('/hero-tiffin-boxes.jpg');
 }
 .hero-actions {
      display:flex; 
-     gap:40px; 
+     gap:50px; 
      align-items:center;
     margin-bottom:30px; 
 }
 .btn {
-     padding: 12px 20px;
+     padding: 13px 22px;
       border-radius: 12px; 
       font-weight:600; 
       cursor:pointer; 

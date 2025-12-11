@@ -1,0 +1,46 @@
+/* App-level styles */
+.App {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: var(--bg);
+	color: var(--text);
+}
+
+header.App-header {
+	background: transparent;
+	padding: 12px 0;
+}
+
+main {
+	flex: 1 1 auto;
+	padding: 32px 0;
+}
+
+footer.App-footer {
+	padding: 16px 0;
+	text-align: center;
+	color: var(--muted-text);
+	font-size: 0.95rem;
+}
+
+.hero {
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	padding: 24px;
+}
+
+.card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 16px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+}
+
